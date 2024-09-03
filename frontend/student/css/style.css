@@ -1,0 +1,222 @@
+/* Overall styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+
+  
+  
+  /* Header styles */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(221, 227, 228, 0.7);
+  }
+  
+  .site-name-and-exit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .site-name {
+    font-family: monospace;
+    font-size: 20px;
+    margin-right: 10px;
+    color: #000;
+    float: left;
+  }
+  .logo{
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-left: -10px;
+}
+  .mini-menu-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 50px;
+  }
+  .notification{
+    align-items: end;
+    justify-content: end;
+  }
+  .notification-and-exit{
+    margin-left: 850px;
+  }
+  .notification,
+  .exit {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+
+
+
+  /* Menu styles */
+  .menu {
+    margin-left: -30px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    float: left;
+  }
+  ul{
+    list-style-type: none;
+}
+  .menu li {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+  }
+  .menu li:nth-child(1){
+    background: rgba(183, 126, 19,0.2);
+    border-radius: 10px;
+  }
+  .menu li:nth-child(1):hover{
+    border-radius: 10px;
+    background: rgba(183, 126, 19,0.5);
+  }
+  .menu li:hover{
+    border-radius: 10px;
+    background: rgb(211, 209, 209,0.5);
+  }
+  h3{
+    text-align: center;
+  }
+  .menu a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu a:hover {
+    opacity: 0.7;
+  }
+  
+  .menu .icon {
+    margin-right: 0px;
+    padding: 10px 10px 10px 10px    ;
+  }
+  
+  .menu .icon img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Silvers styles */
+.main{
+    background-color: rgba(221, 227, 228, 0.7);
+    width: 80%;
+    height:600px;
+    margin-left: 20%;
+}
+
+.container{
+    background-color: white;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    align-items: end;
+    display: block;
+    margin-left: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+  .silvers {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(221, 227, 228, 0.7);
+  }
+  
+  .silvers h2 {
+    margin: 0;
+  }
+  
+  .silver-icon img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+  
+  /* Level styles */
+  .level {
+    display: block;    
+  }
+  .level-icon{
+    display: flex;
+    float: left;
+  }
+  .level-icon img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+  }
+  .level h3{
+    color: #ddd;
+    padding-top: 10px;
+    padding-right: 100px;
+  }
+
+  .level-range > b {
+    display: block;
+    margin-left: 10px;
+    width: 70px;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-left: 5px;
+    height: 20px;
+    background-color: greenyellow;
+    border-radius: 25px;
+  }
+  .progress{
+    width: 90%;
+    height: 20px;
+    margin-left: 5%;
+  }
+  .earth-icon{
+    display: flex;
+    float: left;
+    column-gap: 10px;
+  }
+  .earth-icon img {
+    width: 25px;
+    height: 25px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .earth-icon  h4{
+    display: block;
+  }
+  .group-reyting{
+    display: block;
+    column-gap: 30px;
+  }
+  .common-place, .group-place{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    margin-left: 10px;
+
+  }
+  .common-place h3, .group-place h3{
+    margin-top: 10px;
+    color: #000;
+  }
+  .common-place i,.group-place i{
+    margin-top: 20px;
+    color: rgb(183, 126, 19);
+  }
+
+  

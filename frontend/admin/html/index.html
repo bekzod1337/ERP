@@ -4,55 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../photos/nt-logo.png">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Offline Admin Panel</title>
 </head>
 <body>
-    <div class="container">
-        <!-- for students -->
-        <div class="students">
+    <header>
+        <div class="logo">
+            <h3>NAJOT</h3>
+            <img src="../../photos/nt-logo.png" alt="">
+            <h3>TA'LIM</h3>
+        </div>
+        <div class="menu">
             <ul>
                 <li>
-                    <button type="submit" onclick="addStudent()">O'quvchi qo'shish</button>
+                    <button id="users">Barcha</button>
                 </li>
                 <li>
-                    <button type="submit">O'quvchilarni olish</button>
+                    <button id="students">O'quvchilar</button>
                 </li>
                 <li>
-                    <button type="submit">Oq'uvchini olish</button>
+                    <button id="teachers">O'qituvchilar</button>
                 </li>
                 <li>
-                    <button type="submit">O'quvchini yangilash</button>
+                    <button id="admins">Adminlar</button>
                 </li>
                 <li>
-                    <button type="submit">O'quvchini o'chirish</button>
+                    <button id="rooms">Sinfhonalar</button>
+                </li>
+                <li>
+                    <button id="payments">To'lovlar</button>
                 </li>
             </ul>
         </div>
-        <!-- for teacher -->
-        <div class="teachers">
-            <ul>
-                <li>
-                    <button type="submit" onclick="">O'qituvchi qo'shish</button>
-                </li>
-                <li>
-                    <button type="submit">O'qituvchilarni olish</button>
-                </li>
-                <li>
-                    <button type="submit">Oq'ituvchini olish</button>
-                </li>
-                <li>
-                    <button type="submit">O'qituvchini yangilash</button>
-                </li>
-                <li>
-                    <button type="submit">O'qituvchini o'chirish</button>
-                </li>
-            </ul>
+    </header>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-btn">Search</button>
         </div>
     </div>
-    
 
-    <!-- js -->
-     <script src="../js/student.js"></script>
-     <script src="../js/teacher.js"></script>
+    <!-- js lists -->
+     <div id="list"></div>
+    <script src="../js/script.js"></script>
 </body>
 </html>

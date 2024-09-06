@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* header qismi */
+header{
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgb(28, 20, 94);
+}
+.logo{
+    justify-content: space-evenly;
+    display: flex;
+}
+header h3{
+    padding: 10px;
+    font-size: 25px;
+    color: orange;
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+.menu{
+    padding: 0;
+    margin: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+header button{
+    background: none;
+    border: 0;
+    color: orange;
+    cursor: pointer;
+}
+li{
+    color: orange;
+    list-style: none;
+    text-decoration: none;
+}
+header li{
+    padding: 10px 10px 10px 10px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+    display: inline-block;
+    -webkit-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+-moz-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+}
+
+/* main */
+.container{
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+}
+.search{
+    width: 100%;
+    padding: 10px;
+}
+.search input[type="text"]{
+    background-color: azure;
+    border: 1px solid  black;
+    border-radius: 25px;
+    width: 80%;
+    height: 15px;
+    padding: 10px;
+    text-align: center;
+}
+.search button{
+    background-color: orange;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 15%;
+    height: 35px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* js */
+table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+table th, table td {
+    border: 1px solid black;
+    padding: 8px; 
+    text-align: center; 
+    width: 20%; /* Har bir ustun kengligi */
+}
+
+table thead {
+    background-color: #f2f2f2;
+    font-weight: bold; 
+}

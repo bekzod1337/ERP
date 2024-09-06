@@ -34,10 +34,10 @@ async function setupModels() {
     await pool.query(`
         CREATE TABLE IF NOT EXISTS users(
             id SERIAL PRIMARY KEY,
-            first_name VARCHAR,
-            second_name VARCHAR ,
-            password VARCHAR ,
-            role VARCHAR ,
+            first_name VARCHAR NOT NULL,
+            second_name VARCHAR NOT NULL,
+            password VARCHAR NOT NULL,
+            role VARCHAR NOT NULL,
             created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     `);
@@ -65,11 +65,11 @@ async function setupModels() {
         CREATE TABLE IF NOT EXISTS payments(
             id SERIAL PRIMARY KEY,
             student_id INT,
-            couse_id INT,
-            amout DECIMAL(10,2),
+            course_id INT,
+            amount DECIMAL(10,2),
             payment_date  DATE,
             foreign key  (student_id) references users(id),
-            foreign key  (couse_id) references courses(id)
+            foreign key  (course_id) references courses(id)
         )
     `);
     

@@ -3,12 +3,12 @@ import bcrypt from 'bcrypt';
 // Barcha foydalanuvchilarni olish
 export async function getAllUser(req, res) {
     try {
-      if (req.user && req.user.role === 'admin') {
-        const result = await pool.query('SELECT * FROM users;');
+    //   if (req.user && req.user.role === 'admin') {
+        const result = await pool.query(`SELECT * FROM users`);
         res.status(200).send(result.rows);
-      } else {
-        res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
-      }
+    //   } else {
+        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
+    //   }
     } catch (err) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
@@ -47,7 +47,7 @@ export async function addUser(req, res) {
         );
 
         const newUserId = result.rows[0].id;
-        res.status(200).send(`Foydalanuvchi muvaffaqiyatli qo'shildi. Foydalanuvchi id raqami: ${newUserId}`);
+        res.status(200).send({message:`Foydalanuvchi muvaffaqiyatli qo'shildi. Foydalanuvchi id raqami: ${newUserId}`});
     } catch (err) {
         console.error("Foydalanuvchi qo'shishda xatolik bo'ldi:", err.message);
         res.status(500).send("Foydalanuvchi qo'shishda xatolik bo'ldi:" + err.message);
@@ -114,5 +114,83 @@ export async function login(req, res) {
     } catch (err) {
         console.error("Kirishda xatolik bo'ldi:", err.message);
         res.status(500).send("Kirishda xatolik bo'ldi: " + err.message);
+    }
+}
+
+
+
+// o'quvchilarni olish
+export async function getAllStudents(req, res) {
+    try {
+    //   if (req.user && req.user.role === 'admin') {
+        const result = await pool.query(`
+            SELECT * FROM users WHERE role = 'student';
+            `);
+        res.status(200).send(result.rows);
+    //   } else {
+        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
+    //   }
+    } catch (err) {
+      res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
+    }
+}
+
+
+
+
+// o'qituvchilarni olish
+
+
+export async function getAllTeachers(req, res) {
+    try {
+    //   if (req.user && req.user.role === 'admin') {
+        const result = await pool.query(`
+            SELECT * FROM users WHERE role = 'teacher';
+            `);
+        res.status(200).send(result.rows);
+    //   } else {
+        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
+    //   }
+    } catch (err) {
+      res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
+    }
+}
+
+
+
+// adminlarni olish
+
+export async function getAllAdmins(req, res) {
+    try {
+    //   if (req.user && req.user.role === 'admin') {
+        const result = await pool.query(`
+            SELECT * FROM users WHERE role = 'admin';
+            `);
+        res.status(200).send(result.rows);
+    //   } else {
+        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
+    //   }
+    } catch (err) {
+      res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
+    }
+}
+
+
+
+// qidiruv orqali olish
+
+export async function getSearch(req, res) {
+    try {
+        console.log('Query parameters:', req.params);
+        const { id, first_name, second_name } = req.params;
+        const result = await pool.query(
+            `
+            SELECT * FROM users WHERE id = $1 OR first_name = $2 OR second_name = $3;
+            `,[id,first_name,second_name]
+        );
+
+        res.status(200).json(result.rows);
+    } catch (err) {
+        res.status(500).send("Foydalanuvchini olishda hatolik bo'ldi: " + err.message);
     }
 }

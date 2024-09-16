@@ -1,27 +1,46 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Formani tanlash
     const form = document.getElementById('loginForm');
 
-    // Formaning submit hodisasini ushlash
-    form.addEventListener('submit', function(event) {
-        // Default submit harakatini to'xtatish
+    form.addEventListener('submit', async function(event) {
         event.preventDefault();
-        console.log('works login')
-
-        // // Formadagi ma'lumotlarni olish
         const formData = new FormData(form);
-
-        // // AJAX so'rovini yaratish
-        fetch('http://localhost:4000/user', { // 'YOUR_ENDPOINT_URL_HERE' joyiga ma'lum manzilni kiriting
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json()) // Yana bir ehtimoliy o'zgartirish: `response.text()` yoki boshqa format bo'lishi mumkin
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
         });
+
+        try {
+            const response = await fetch('http://localhost:4000/user/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json(); // Javobni bir marta o'qish
+            localStorage.setItem('accsessToken', result.accsessToken)
+            localStorage.setItem('refreshToken', result.refreshToken);
+            if (response.ok) {
+                switch(result.role) {
+                    case 'admin':
+                        window.location.href = 'http://127.0.0.1:5501/frontend/admin/html/index.html';
+                        break;
+                    case 'student':
+                        window.location.href = 'http://127.0.0.1:5501/frontend/student/html/index.html';
+                        break;
+                    case 'teacher':
+                        window.location.href = 'http://127.0.0.1:5501/frontend/teacher/html/index.html';
+                        break;
+                    default:
+                        console.error('Unknown role:', result.role);
+                        break;
+                }
+            } else {
+                console.error('Error:', result.message || 'Unknown error');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
     });
 });

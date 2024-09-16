@@ -23,38 +23,6 @@ header h3{
     width: 100px;
     height: 100px;
 }
-.menu{
-    padding: 0;
-    margin: 0; 
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
-}
-ul{
-    margin: 0;
-    padding: 0;
-}
-header button{
-    background: none;
-    border: 0;
-    color: orange;
-    cursor: pointer;
-}
-li{
-    color: orange;
-    list-style: none;
-    text-decoration: none;
-}
-header li{
-    padding: 10px 10px 10px 10px;
-    width: 100px;
-    text-align: center;
-    border: 1px solid black;
-    display: inline-block;
-    -webkit-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
--moz-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
-}
 
 /* main */
 .container{
@@ -85,18 +53,90 @@ box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
     cursor: pointer;
 }
 
+
+/* menu */
+.menu{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+    height: 80vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(28, 20, 94);
+    float: left;
+    overflow-y: scroll;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+header button{
+    width: 100%;
+    height: 35px;
+    background: none;
+    border: 0;
+    color: orange;
+    cursor: pointer;
+}
+li{
+    color: orange;
+    list-style: none;
+    text-decoration: none;
+}
+.menu ul{
+    width: 80%;
+    height: 90%;
+}
+.menu li{
+    width: 100%;
+    height: 10%;
+    padding: 5px 5px 5px 0px;
+    margin: 5px 5px 5px 0px;
+    text-align: center;
+    border: none;
+    display: block;
+}
+.menu li button{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(28, 20, 94);
+    color: orange;
+    border: 1px solid orange;
+    border-radius: 25px;
+    cursor: pointer;
+    -webkit-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+-moz-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+}
+
 /* js */
+.list{
+    max-height: 80vh;
+    overflow-y: scroll;
+}
 table{
     border-collapse: collapse;
     text-align: center;
-    width: 80%;
-    margin-left: 10%;
+    width: 70%;
+    margin-left: 25%;
+    background-color: rgb(28, 20, 94);
+    color: orange;
+}
+table th{
+    background-color: gray;
+    color: orange;
 }
 table th, table td {
-    border: 1px solid black;
-    padding: 8px; 
+    border: 1px solid orange;
+    padding: 10px; 
     text-align: center; 
     width: 20%; /* Har bir ustun kengligi */
+    -webkit-box-shadow: -1px 0px 10px 10px rgba(246, 156, 0, 0.5) inset;
+-moz-box-shadow: -1px 0px 10px 10px rgba(230, 151, 13, 0.5) inset;
+box-shadow: -1px 0px 10px 5px rgba(230, 151, 13, 0.5) inset;
 }
 
 table thead {

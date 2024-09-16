@@ -1,5 +1,6 @@
 import { pool } from "../../common/database/database.service.js";
-import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import getConfig from "../../common/config/config.service.js";
 // Barcha foydalanuvchilarni olish
 export async function getAllUser(req, res) {
     try {
@@ -13,6 +14,9 @@ export async function getAllUser(req, res) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
   }
+
+
+
 
 // Bitta foydalanuvchini olish
 export async function getUser(req, res) {
@@ -33,6 +37,9 @@ export async function getUser(req, res) {
     }
 }
 
+
+
+
 // Foydalanuvchi qo'shish
 export async function addUser(req, res) {
     try {
@@ -47,7 +54,7 @@ export async function addUser(req, res) {
         );
 
         const newUserId = result.rows[0].id;
-        res.status(200).send({message:`Foydalanuvchi muvaffaqiyatli qo'shildi. Foydalanuvchi id raqami: ${newUserId}`});
+        res.status(200).send(`Foydalanuvchi muvaffaqiyatli qo'shildi. Foydalanuvchi id raqami: ${newUserId}`);
     } catch (err) {
         console.error("Foydalanuvchi qo'shishda xatolik bo'ldi:", err.message);
         res.status(500).send("Foydalanuvchi qo'shishda xatolik bo'ldi:" + err.message);
@@ -78,47 +85,6 @@ export async function deleteUser(req,res) {
 
 
 
-
-
-
-export async function login(req, res) {
-    try {
-        const { id, password } = req.body;
-
-        // Foydalanuvchini id bo'yicha qidirish
-        const result = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
-
-        if (result.rows.length === 0) {
-            return res.status(401).send('Foydalanuvchi topilmadi.');
-        }
-
-        const user = result.rows[0];
-
-        // Parolni tekshirish
-        const isPasswordMatch = await bcrypt.compare(password, user.password);
-        if (!isPasswordMatch) {
-            return res.status(401).send("Noto'g'ri parol");
-        }
-
-        // Foydalanuvchi rolining qiymatini tekshirish va yoʻnaltirish
-        switch (user.role) {
-            case 'student':
-                return res.redirect('file:///C:/Users/user/Desktop/ERP/frontend/student/html/index.html');
-            case 'teacher':
-                return res.redirect('/teacher.html');
-            case 'admin':
-                return res.redirect('/admin.html');
-            default:
-                return res.status(403).send('Noaniq rol.');
-        }
-    } catch (err) {
-        console.error("Kirishda xatolik bo'ldi:", err.message);
-        res.status(500).send("Kirishda xatolik bo'ldi: " + err.message);
-    }
-}
-
-
-
 // o'quvchilarni olish
 export async function getAllStudents(req, res) {
     try {
@@ -139,8 +105,6 @@ export async function getAllStudents(req, res) {
 
 
 // o'qituvchilarni olish
-
-
 export async function getAllTeachers(req, res) {
     try {
     //   if (req.user && req.user.role === 'admin') {
@@ -159,7 +123,6 @@ export async function getAllTeachers(req, res) {
 
 
 // adminlarni olish
-
 export async function getAllAdmins(req, res) {
     try {
     //   if (req.user && req.user.role === 'admin') {
@@ -178,19 +141,57 @@ export async function getAllAdmins(req, res) {
 
 
 // qidiruv orqali olish
-
 export async function getSearch(req, res) {
     try {
-        console.log('Query parameters:', req.params);
-        const { id, first_name, second_name } = req.params;
+        const { id } = req.params;
         const result = await pool.query(
             `
-            SELECT * FROM users WHERE id = $1 OR first_name = $2 OR second_name = $3;
-            `,[id,first_name,second_name]
+            SELECT * FROM users WHERE first_name LIKE '%${id}%' OR second_name LIKE '%${id}%';
+            `
         );
-
         res.status(200).json(result.rows);
     } catch (err) {
         res.status(500).send("Foydalanuvchini olishda hatolik bo'ldi: " + err.message);
+    }
+}
+
+// token yaratish
+function generateAccsessToken(data){
+    return jwt.sign(data, getConfig("JWT_ACCESS_SECRET"), {expiresIn: "15m"});
+}
+
+// tokenni yangilash
+function generateRefreshToken(data){
+    return jwt.sign(data, getConfig("JWT_REFRESH_SECRET", {expiresIn: "8h"}));
+}
+
+
+
+// Login tekshirish
+export async function login(req, res,next) {
+    try {
+        const { id, password } = req.body;
+
+        const result = await pool.query(`
+            SELECT * FROM users WHERE id = $1 AND password = $2;
+        `, [id, password]);
+
+        if (result.rows.length > 0) {
+            const user = result.rows[0];
+            const { role } = user;
+        const accsessToken = await generateAccsessToken({id: id});
+        const refreshToken = await generateRefreshToken({id: id});
+        res.status(200).json({
+            success: true,
+            role: role,
+            accsessToken,
+            refreshToken
+        });
+        } else {
+            throw new CustomError('Foydalanuvchi topilmadi', 401);
+        }
+    } catch (err) {
+        console.error("Ma'lumot olishda xato:", err.message);
+        next(err);
     }
 }

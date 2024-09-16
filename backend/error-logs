@@ -1,0 +1,58 @@
+{"level":"error","message":"Cannot set headers after they are sent to the client","timestamp":"2024-09-13T12:13:52.623Z","type":"unhandledRejection"}
+{"level":"error","message":"Cannot set headers after they are sent to the client","timestamp":"2024-09-13T12:27:02.475Z","type":"unhandledRejection"}
+{"level":"error","message":"Cannot set headers after they are sent to the client","timestamp":"2024-09-13T12:30:04.017Z","type":"unhandledRejection"}
+{"level":"error","message":"jwt is not defined","timestamp":"2024-09-13T12:31:09.990Z"}
+{"level":"error","message":"getConfig is not defined","timestamp":"2024-09-13T12:32:01.563Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:32:32.263Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:34:30.296Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:38:46.465Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:41:18.371Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:41:48.639Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:43:46.134Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:43:57.288Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:44:29.746Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T12:44:55.104Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:19:30.067Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:19:31.843Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:19:43.276Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:19:44.134Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:19:44.282Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:33:34.764Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:35:29.654Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:38:14.713Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:38:34.191Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:14.554Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:53.449Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:54.286Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:54.510Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:54.673Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:39:54.813Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:41:02.401Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:41:32.664Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:42:58.221Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:43:16.126Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:44:35.216Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:45:46.729Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:45:47.498Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:45:50.171Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:46:16.175Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:49:35.449Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:53:47.263Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:54:50.333Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:55:47.329Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:56:38.692Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:58:06.421Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T19:59:48.251Z"}
+{"level":"error","message":"accsessToken is not defined","timestamp":"2024-09-13T20:00:11.343Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:01:54.000Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:07:32.888Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:07:35.255Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:08:22.923Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:08:51.952Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:08:52.365Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:08:52.513Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:08:54.223Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:09:39.606Z"}
+{"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:09:42.989Z"}
+{"level":"error","message":"CustomError is not defined","timestamp":"2024-09-13T21:25:28.398Z"}
+{"level":"error","message":"CustomError is not defined","timestamp":"2024-09-13T21:32:03.724Z"}

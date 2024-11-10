@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/add.css">
+    <title>Najot Ta'lim</title>
+    <style>
+        .form-container {
+            display: none; /* Hide all forms by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="selection">-- Ma'lumot turini tanlang --</label>
+        <select id="selection" name="selection" onchange="showForm()">
+            <option value="" disabled selected>Tanlash</option>
+            <option value="user">Foydalanuvchi</option>
+            <option value="course">Kurs</option>
+            <option value="room">Hona</option>
+        </select>
+
+        <!-- User form -->
+        <div id="user-form" class="form-container">
+            <form id="user-form">
+                <label for="first_name">ism:</label>
+                <input type="text" id="first_name" name="first_name" required><br><br>
+                <label for="second-name">Familiya:</label>
+                <input type="text" id="second_name" name="second_name" required><br><br>
+                <label for="second-name">Parol:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="student">O'quvchi</option>
+                    <option value="teacher">O'qituvchi</option>
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Course form -->
+<div id="course-form" class="form-container">
+    <form id="course-form">
+        <label for="course-name">Guruh nomi:</label>
+        <input type="text" id="course-name" name="course-name" required><br><br>
+
+        <label for="teacher-id">O'qituvchi:</label>
+        <select id="teacher-id" name="teacher-id" required>
+            <option value="">O'qituvchi tanlang</option>
+            <!-- Teacher options will be populated here -->
+        </select><br><br>
+
+        <label for="started-date">Guruh ochilgan sana:</label>
+        <input type="date" id="started-date" name="started-date" required><br><br>
+
+        <label for="start-time">Boshlanish vaqti:</label>
+        <input type="time" id="start-time" name="start-time" required><br><br>
+
+        <label for="end-time">Tugash vaqti:</label>
+        <input type="time" id="end-time" name="end-time" required><br><br>
+
+        <label for="price">Kurs narhi:</label>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="room-id">Hona:</label>
+        <select id="room-id" name="room-id" required>
+            <option value="">Hona tanlang</option>
+            <!-- Room options will be populated here -->
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+        <!-- Room form -->
+        <div id="room-form" class="form-container">
+            <form id="room-form">
+                <label for="name">Hona nomi:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/add.js"></script>
+</body>
+</html>

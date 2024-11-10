@@ -6,6 +6,14 @@
     <link rel="icon" href="../../photos/nt-logo.png">
     <link rel="stylesheet" href="../css/style.css">
     <title>Offline Admin Panel</title>
+    <style>
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,35 +32,53 @@
 
     <!-- menu -->
     <div class="menu">
-        <ul>
+        <ul id="menu">
             <li>
-                <button id="addFunction">Ma'lumot qo'shish</button>
+                <select id="action-select">
+                    <option value="default" disabled selected>MA'LUMOT QO'SHISH</option>
+                    <option value="add">QO'SHISH</option>
+                    <option value="update">YANGILASH</option>
+                    <option value="delete">O'CHIRISH</option>
+                </select>
             </li>
             <li>
-                <button id="users">Barcha</button>
+                <button id="users">BARCHA</button>
             </li>
             <li>
-                <button id="students">O'quvchilar</button>
+                <button id="students">O'QUVCHILAR</button>
             </li>
             <li>
-                <button id="teachers">O'qituvchilar</button>
+                <button id="teachers">O'QITUVCHILAR</button>
             </li>
             <li>
-                <button id="admins">Adminlar</button>
+                <button id="admins">ADMINLAR</button>
             </li>
             <li>
-                <button id="rooms">Sinfhonalar</button>
+                <button id="courses">KURSLAR</button>
             </li>
             <li>
-                <button id="payments">To'lovlar</button>
+                <button id="rooms">SINFHONALAR</button>
             </li>
             <li>
-                <button id="exit-to-login">Chiqish</button>
+                <button id="payments">TO'LOVLAR</button>
+            </li>
+            <li>
+                <button id="exit-to-login">CHIQISH</button>
             </li>
         </ul>
     </div>
+    
     <!-- js lists -->
-     <div id="list"></div>
+    
+        <div id="table-wrapper">
+            <div id="list"></div>
+            <!-- The table will be inserted here -->
+        </div>
+    </div>
+    
+
+
     <script src="../js/script.js"></script>
+
 </body>
 </html>

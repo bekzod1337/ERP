@@ -54,6 +54,8 @@ async function setupModels() {
             name VARCHAR,
             teacher_id INT,
             start_date  DATE,
+            start_time TIME,
+            end_time TIME, 
             price  DECIMAL(10,2),
             room_id INT,
             foreign key  (teacher_id) references users(id),

@@ -8,21 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.forEach((value, key) => {
             data[key] = value;
         });
-
+        
         try {
             const response = await fetch('http://localhost:4000/user/login', {
                 method: 'POST',
-                headers: {
+                headers: {  
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             });
-
-            const result = await response.json(); // Javobni bir marta o'qish
-            localStorage.setItem('accsessToken', result.accsessToken)
-            localStorage.setItem('refreshToken', result.refreshToken);
+        
+            const textResponse = await response.text(); // Read as text first
+        
+            let result;
             if (response.ok) {
-                switch(result.role) {
+                result = JSON.parse(textResponse); // Parse only if response is OK
+                localStorage.setItem('accsessToken', result.accsessToken);
+                localStorage.setItem('refreshToken', result.refreshToken);
+                switch (result.role) {
                     case 'admin':
                         window.location.href = 'http://127.0.0.1:5501/frontend/admin/html/index.html';
                         break;
@@ -37,10 +40,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         break;
                 }
             } else {
-                console.error('Error:', result.message || 'Unknown error');
+                console.error('Error:', textResponse); // Log raw error text
             }
         } catch (error) {
             console.error('Error:', error);
         }
+        
     });
 });

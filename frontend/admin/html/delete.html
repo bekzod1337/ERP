@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/delete.css">
+    <title>Ma'lumotlarni O'chirish</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Ma'lumotlarni O'chirish</h1>
+        <label for="type-select">Ma'lumot turini tanlang:</label>
+        <select id="type-select">
+            <option value="">Tanlash</option>
+            <option value="user">Foydalanuvchi</option>
+            <option value="course">Kurs</option>
+            <option value="room">Hona</option>
+        </select>
+
+        <div id="item-container" style="display: none;">
+            <label for="item-select">O'chiriladigan ma'lumotlar:</label>
+            <select id="item-select">
+                <option value="">Tanlash</option>
+            </select>
+        </div>
+
+        <button id="delete-btn" style="display: none;">O'chirish</button>
+    </div>
+
+    <script src="../js/delete.js"></script>
+</body>
+</html>

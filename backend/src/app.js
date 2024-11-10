@@ -7,11 +7,12 @@ import notFoundRoutes from "./common/middleware/notFoundRoutes.js";
 import { accessLogger, errorLogger } from "./common/service/logger.service.js";
 import cors from 'cors';
 import cookieparser from 'cookie-parser';
-// import courseRouter from "./controller/courses.controller.js";
 import roomRouter from "./controller/rooms.controller.js";
+import courseRouter from "./controller/courses.controller.js";
 const app = express();
 
 app.use(cors());
+app.use(express.urlencoded({ extended: true })); 
 app.use(cookieparser());
 const PORT = getConfig("EXPRESS_PORT") || 3000;
 
@@ -25,7 +26,7 @@ process.on("unhandledRejection", (err) => {
 function initRoutes() {
   app.use("/user", userRouter);
   app.use("/room", roomRouter);
-  // app.use("/course", courseRouter);
+  app.use("/course", courseRouter);
 }
 async function init() {
   app.use(express.json());
@@ -42,8 +43,8 @@ async function init() {
   app.use(expressErrorHandling);
 
   await initDatabase();
-
-  app.listen(PORT, () => console.log(`Server ${PORT} ishladi`));
+  const host = "192.168.151.71"
+  app.listen(host,PORT, () => console.log(`Server ${PORT} ishladi`));
 }
 
 init();

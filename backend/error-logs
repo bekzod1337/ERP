@@ -56,3 +56,53 @@
 {"level":"error","message":"secretOrPrivateKey must have a value","timestamp":"2024-09-13T20:09:42.989Z"}
 {"level":"error","message":"CustomError is not defined","timestamp":"2024-09-13T21:25:28.398Z"}
 {"level":"error","message":"CustomError is not defined","timestamp":"2024-09-13T21:32:03.724Z"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:00.425Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:15.362Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:21.136Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:35.204Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:40.066Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:41.644Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:43.910Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:47.398Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:50.799Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:10:53.807Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:11:02.037Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:11:23.337Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:11:45.552Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:11:46.598Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:28.352Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:29.671Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:37.386Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:41.409Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:45.630Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:12:50.922Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:07.172Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:08.440Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:09.866Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:13.904Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:15.896Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:19.392Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:13:20.747Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:16:05.627Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:17:54.724Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:18:35.912Z","type":"unhandledRejection"}
+{"level":"error","message":"courseRouter is not defined","timestamp":"2024-09-27T21:18:54.695Z","type":"unhandledRejection"}
+{"level":"error","message":"column \"start_time\" of relation \"courses\" does not exist","timestamp":"2024-09-27T21:25:29.688Z"}
+{"level":"error","message":"column \"start_time\" of relation \"courses\" does not exist","timestamp":"2024-09-27T21:26:12.107Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:27:03.113Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:27:15.817Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:27:47.764Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:29:08.250Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:29:13.125Z"}
+{"level":"error","message":"INSERT has more target columns than expressions","timestamp":"2024-09-27T21:29:23.392Z"}
+{"level":"error","message":"date/time field value out of range: \"2024:1:22\"","timestamp":"2024-09-27T21:31:03.621Z"}
+{"level":"error","message":"relation \"rooms\" does not exist","timestamp":"2024-09-27T22:15:50.687Z"}
+{"level":"error","message":"relation \"rooms\" does not exist","timestamp":"2024-09-27T22:16:06.671Z"}
+{"level":"error","message":"relation \"rooms\" does not exist","timestamp":"2024-09-27T22:16:08.303Z"}
+{"level":"error","message":"relation \"rooms\" does not exist","timestamp":"2024-09-27T22:16:10.727Z"}
+{"level":"error","message":"message is not defined","timestamp":"2024-09-30T06:58:29.455Z","type":"unhandledRejection"}
+{"level":"error","message":"message is not defined","timestamp":"2024-09-30T06:58:30.338Z","type":"unhandledRejection"}
+{"level":"error","message":"message is not defined","timestamp":"2024-09-30T06:58:30.527Z","type":"unhandledRejection"}
+{"level":"error","message":"message is not defined","timestamp":"2024-09-30T06:58:30.643Z","type":"unhandledRejection"}
+{"level":"error","message":"listen EACCES: permission denied 192.168.151.71","timestamp":"2024-11-04T13:56:09.958Z","type":"uncaughtException"}
+{"level":"error","message":"listen EACCES: permission denied 192.168.151.71","timestamp":"2024-11-04T13:57:00.426Z","type":"uncaughtException"}

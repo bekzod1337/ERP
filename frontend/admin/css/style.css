@@ -1,6 +1,8 @@
 body{
     margin: 0;
-    padding: 0;
+    height: 100vh;
+    background-color: #ac8968;
+
 }
 
 /* header qismi */
@@ -8,7 +10,7 @@ header{
     justify-content: space-between;
     width: 100%;
     border: 1px solid black;
-    background-color: rgb(28, 20, 94);
+    background-color: #1f2833;
 }
 .logo{
     justify-content: space-evenly;
@@ -17,7 +19,7 @@ header{
 header h3{
     padding: 10px;
     font-size: 25px;
-    color: orange;
+    color: #ac8968;
 }
 .logo img{
     width: 100px;
@@ -33,10 +35,12 @@ header h3{
 .search{
     width: 100%;
     padding: 10px;
+    justify-content: center;
 }
 .search input[type="text"]{
-    background-color: azure;
+    background-color: #1f2833;
     border: 1px solid  black;
+    color: #3aafa9;
     border-radius: 25px;
     width: 80%;
     height: 15px;
@@ -44,8 +48,9 @@ header h3{
     text-align: center;
 }
 .search button{
-    background-color: orange;
+    background-color: #1f2833;
     border: 1px solid black;
+    color: #3aafa9;
     border-radius: 25px;
     width: 15%;
     height: 35px;
@@ -65,7 +70,7 @@ header h3{
     display: flex; 
     justify-content: center;
     align-items: center; 
-    background-color: rgb(28, 20, 94);
+    background-color: #1f2833;
     float: left;
     overflow-y: scroll;
 }
@@ -73,73 +78,112 @@ ul{
     margin: 0;
     padding: 0;
 }
-header button{
-    width: 100%;
-    height: 35px;
-    background: none;
-    border: 0;
-    color: orange;
-    cursor: pointer;
-}
 li{
-    color: orange;
+    color: #1f2833;
     list-style: none;
     text-decoration: none;
 }
 .menu ul{
+    margin-top: -20px;
     width: 80%;
     height: 90%;
 }
 .menu li{
     width: 100%;
     height: 10%;
-    padding: 5px 5px 5px 0px;
-    margin: 5px 5px 5px 0px;
-    text-align: center;
-    border: none;
+    padding: 0px 5px 5px 0px;
+    margin: 0px 5px 5px 0px;
     display: block;
 }
+
 .menu li button{
     width: 100%;
     height: 100%;
-    background-color: rgb(28, 20, 94);
-    color: orange;
-    border: 1px solid orange;
+    background-color: #3aafa9;
+    color: #1f2833;
+    border: 1px solid black;
     border-radius: 25px;
     cursor: pointer;
-    -webkit-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
--moz-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
-box-shadow: -1px 0px 10px 2px rgba(230, 151, 13, 0.2) inset;
+    -webkit-box-shadow: 1px 0px 10px 2px rgba(56, 154, 141, 0.2) inset;
+-moz-box-shadow: 1px 0px 50px 2px rgba(54, 138, 151, 0.2) inset;
+box-shadow: 1px 0px 10px 2px rgba(47, 123, 148, 0.2) inset;
+}
+
+.menu li button:hover{
+
+    width: 100%;
+    height: 100%;
+    background-color: #3a8481;
+    color: #1f2833;
+    border: 1px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 0px 10px 2px rgba(56, 154, 141, 0.2) inset;
+-moz-box-shadow: 1px 0px 50px 2px rgba(54, 138, 151, 0.2) inset;
+box-shadow: 1px 0px 10px 2px rgba(47, 123, 148, 0.2) inset;
+}
+
+select {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #3aafa9; 
+    color: #1f2833; 
+    border-radius: 25px; 
+    padding: 10px; 
+    cursor: pointer; 
+    appearance: none; /* Browser default arrow */
+    position: relative;
+    margin-bottom: 10px; /* To add space below select */
+}
+
+select:hover {
+    background-color: #3a8481; 
+}
+option{
+ background-color: #3aafa9;
 }
 
 /* js */
-.list{
-    max-height: 80vh;
-    overflow-y: scroll;
-}
-table{
+/* Table styles */
+table {
     border-collapse: collapse;
-    text-align: center;
-    width: 70%;
-    margin-left: 25%;
-    background-color: rgb(28, 20, 94);
-    color: orange;
-}
-table th{
-    background-color: gray;
-    color: orange;
-}
-table th, table td {
-    border: 1px solid orange;
-    padding: 10px; 
-    text-align: center; 
-    width: 20%; /* Har bir ustun kengligi */
-    -webkit-box-shadow: -1px 0px 10px 10px rgba(246, 156, 0, 0.5) inset;
--moz-box-shadow: -1px 0px 10px 10px rgba(230, 151, 13, 0.5) inset;
-box-shadow: -1px 0px 10px 5px rgba(230, 151, 13, 0.5) inset;
+    width: 100%;
+    max-height: 70vh; /* Limit height for scrolling */
+    background-color: #1f2833;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
-table thead {
-    background-color: #f2f2f2;
-    font-weight: bold; 
+table th, table td {
+    padding: 10px; 
+    text-align: center; 
+    min-width: 80px; /* Minimum width to prevent columns from collapsing */
+    height: 30px;
+    overflow: hidden; /* Prevent overflow of content */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
+
+table th {
+    background-color: #2f4560; /* Header background color */
+    color: #ac8968; /* Header text color */
+}
+
+table td {
+    border-bottom: 1px solid #3aafa9;
+    border-bottom-style: dashed;
+    color: #a97748; /* Body text color */
+}
+
+#table-wrapper {
+    max-height: 70vh; /* Limit the height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-left: 25%; /* Centering the table */
+    border: 1px solid #3aafa9; /* Optional: Add a border */
+    border-radius: 10px; /* Optional: Rounded corners */
+    width: 70%;
+}
+
+

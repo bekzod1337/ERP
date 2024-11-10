@@ -1,15 +1,18 @@
 import { pool } from "../../common/database/database.service.js";
 import jwt from 'jsonwebtoken';
 import getConfig from "../../common/config/config.service.js";
+
+
+
+
+
+
+
 // Barcha foydalanuvchilarni olish
 export async function getAllUser(req, res) {
     try {
-    //   if (req.user && req.user.role === 'admin') {
         const result = await pool.query(`SELECT * FROM users`);
         res.status(200).send(result.rows);
-    //   } else {
-        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
-    //   }
     } catch (err) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
@@ -88,14 +91,10 @@ export async function deleteUser(req,res) {
 // o'quvchilarni olish
 export async function getAllStudents(req, res) {
     try {
-    //   if (req.user && req.user.role === 'admin') {
         const result = await pool.query(`
             SELECT * FROM users WHERE role = 'student';
             `);
         res.status(200).send(result.rows);
-    //   } else {
-        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
-    //   }
     } catch (err) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
@@ -107,14 +106,10 @@ export async function getAllStudents(req, res) {
 // o'qituvchilarni olish
 export async function getAllTeachers(req, res) {
     try {
-    //   if (req.user && req.user.role === 'admin') {
         const result = await pool.query(`
             SELECT * FROM users WHERE role = 'teacher';
             `);
         res.status(200).send(result.rows);
-    //   } else {
-        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
-    //   }
     } catch (err) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
@@ -125,14 +120,10 @@ export async function getAllTeachers(req, res) {
 // adminlarni olish
 export async function getAllAdmins(req, res) {
     try {
-    //   if (req.user && req.user.role === 'admin') {
         const result = await pool.query(`
             SELECT * FROM users WHERE role = 'admin';
             `);
         res.status(200).send(result.rows);
-    //   } else {
-        // res.status(403).send("Sizda bu ma'lumotlarga kirish huquqi yo'q.");
-    //   }
     } catch (err) {
       res.status(500).send("Foydalanuvchilarni olishda hatolik bo'ldi: " + err.message);
     }
@@ -171,7 +162,6 @@ function generateRefreshToken(data){
 export async function login(req, res,next) {
     try {
         const { id, password } = req.body;
-
         const result = await pool.query(`
             SELECT * FROM users WHERE id = $1 AND password = $2;
         `, [id, password]);
@@ -179,16 +169,17 @@ export async function login(req, res,next) {
         if (result.rows.length > 0) {
             const user = result.rows[0];
             const { role } = user;
-        const accsessToken = await generateAccsessToken({id: id});
-        const refreshToken = await generateRefreshToken({id: id});
-        res.status(200).json({
-            success: true,
-            role: role,
-            accsessToken,
-            refreshToken
-        });
+            const accsessToken = await generateAccsessToken({id: id});
+            const refreshToken = await generateRefreshToken({id: id});
+            res.status(200).json({
+                success: true,
+                role: role,
+                accsessToken,
+                refreshToken
+            });
         } else {
-            throw new CustomError('Foydalanuvchi topilmadi', 401);
+            res.status(401).json({ message: 'Foydalanuvchi topilmadi' });
+            return;
         }
     } catch (err) {
         console.error("Ma'lumot olishda xato:", err.message);
